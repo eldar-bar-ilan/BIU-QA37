@@ -1,3 +1,5 @@
+# basic data types
+
 a = 5  # int
 b = 5.3  # float
 c = True  # bool
@@ -12,19 +14,3 @@ print(type(a))
 print(type(b))
 print(type(c))
 print(type(d))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
