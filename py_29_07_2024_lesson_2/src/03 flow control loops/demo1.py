@@ -1,3 +1,5 @@
+# WHILE LOOP
+
 secret_password = "123"
 
 user_input = input("enter password to login: ")

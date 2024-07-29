@@ -1,3 +1,5 @@
+# access list elements using index
+
 numbers = [2, 4, 6, 8]
 print(numbers)
 print(numbers[0])  # 0, -4
