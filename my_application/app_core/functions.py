@@ -6,8 +6,9 @@ def sum_of_numbers(a: int, b: int) -> int:
     return a + b
 
 
-def get_max(list_of_numbers) -> int:
-    sum_ = 0
+def get_max(list_of_numbers: list[int]) -> int:
+    max_ = list_of_numbers[0]
     for n in list_of_numbers:
-        sum_ += n
-    return sum_
+        if n > max_:
+            max_ = n
+    return max_
