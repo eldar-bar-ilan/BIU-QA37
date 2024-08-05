@@ -8,12 +8,14 @@ while keep_going:
     if user_choice == "1":
         user_name = input("enter your name: ")
         print(f.greet_user(user_name))
-    if user_choice == "2":
+    elif user_choice == "2":
         a = int(input("enter first number: "))
         b = int(input("enter second number: "))
         sum_ = f.sum_of_numbers(a, b)
         print(f"the sum is {sum_}")
-    if user_choice == "x":
+    elif user_choice == "x":
         keep_going = False
+    else:
+        print(f"Error: the choice {user_choice} is not supported yet")
 
 print("Bye")
