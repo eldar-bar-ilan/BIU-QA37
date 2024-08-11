@@ -5,11 +5,20 @@ class Car:
         self.number = number
         self.brand = brand
         self.year = year
-        self.speed = speed
+        self.__speed = speed  # private variable
         self.km = km
 
     def __str__(self):
-        return f"Car[number={self.number}, brand={self.brand}, year={self.year}, speed={self.speed}]"
+        return f"Car[number={self.number}, brand={self.brand}, year={self.year}, speed={self.__speed}]"
+
+    @property
+    def speed(self):
+        return self.__speed
+
+    @speed.setter
+    def speed(self, value):
+        if 0 <= value <= Car.MAX_SPEED:
+            self.__speed = value
 
 
 class Person:
