@@ -1,4 +1,7 @@
 class Car:
+    """
+    the max speed
+    """
     MAX_SPEED: int = 110
 
     def __init__(self, number: int, brand: str, year: int, speed: int, km: int):
@@ -19,6 +22,9 @@ class Car:
     def speed(self, value):
         if 0 <= value <= Car.MAX_SPEED:
             self.__speed = value
+
+    def drive(self, distance: int):
+        self.km += distance
 
 
 class Person:
