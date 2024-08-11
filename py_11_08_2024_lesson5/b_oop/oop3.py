@@ -11,3 +11,6 @@ class Person:
 
     def __str__(self):
         return f"Person[id={self.pid}, name={self.name}, age={self.age}]"
+
+    def speak(self):
+        print(f"{self.name} is speaking")

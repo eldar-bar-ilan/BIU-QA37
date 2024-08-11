@@ -9,3 +9,4 @@ print(f"count is {Person.count}")  # 2
 print(p1)
 print(p2)
 
+p2.speak()
