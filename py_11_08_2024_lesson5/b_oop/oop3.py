@@ -1,10 +1,11 @@
 class Car:
     """
-    the max speed
+    represents a car instance
     """
     MAX_SPEED: int = 110
+    """ the max speed allowed"""
 
-    def __init__(self, number: int, brand: str, year: int, speed: int, km: int):
+    def __init__(self, number: int, brand: str, year: int, speed: int = 0, km: int = 0):
         self.number = number
         self.brand = brand
         self.year = year
