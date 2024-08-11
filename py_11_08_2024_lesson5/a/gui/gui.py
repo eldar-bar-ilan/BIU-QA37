@@ -19,14 +19,16 @@ lb_age.place(x=20, y=50)
 tf_age = tk.Entry(root, width=5)
 tf_age.place(x=130, y=50)
 
-bt_msg = tk.Button(text="Click")
+bt_msg = tk.Button(root, text="Click")
 bt_msg.place(x=20, y=80)
+lb_greet = tk.Label(root, borderwidth=1, relief="solid", width=20)
+lb_greet.place(x=130, y=80)
 
 
 # callback function
 def greet():
     user_name = tf_name.get()
-    print(user_name)
+    lb_greet.config(text=f"Hello {user_name}")
 
 
 # register the button with the function
