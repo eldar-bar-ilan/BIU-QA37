@@ -1,3 +1,17 @@
+class Car:
+    MAX_SPEED: int = 110
+
+    def __init__(self, number: int, brand: str, year: int, speed: int, km: int):
+        self.number = number
+        self.brand = brand
+        self.year = year
+        self.speed = speed
+        self.km = km
+
+    def __str__(self):
+        return f"Car[number={self.number}, brand={self.brand}, year={self.year}, speed={self.speed}]"
+
+
 class Person:
     # class variable
     count = 0
