@@ -6,8 +6,9 @@ cursor = con.cursor()
 
 cursor.execute('select * from products')
 
-for i in range(5):
-    result = cursor.fetchone()
-    print(result)
+result = cursor.fetchall()
+print(result)
 
+for row in result:
+    print(row)
 
