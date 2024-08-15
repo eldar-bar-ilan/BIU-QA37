@@ -9,6 +9,10 @@ def add_entry_to_dictionary(word: str, definition: str):
     dictionary[word] = definition
 
 
+def remove_from_dictionary(word: str):
+    dictionary.pop(word)
+
+
 def find_word_in_dictionary(word: str) -> str:
     if dictionary.__contains__(word):
         return dictionary[word]
