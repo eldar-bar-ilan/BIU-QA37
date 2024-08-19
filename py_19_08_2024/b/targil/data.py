@@ -9,13 +9,18 @@ class Book:
 
 
 # add function that gets a book as parameter and adds it to the books table in the db
-def add_book(book:Book):
-    # connect to the db_library db
-    # get a cursor
-    # define an sql command
-    # execute the command
-    # use the connection to commit
-    # close the connection (unless you used with)
+def add_book(book: Book):
+    with db.connect(host='localhost', user='root', password='1234', database='db_library') as con:
+        # connect to the db_library db
+        # get a cursor
+        cursor_ = con.cursor(prepared=True)
+        # define an sql command
+        sql = f'insert into books values(0, %s, %s)'
+        # execute the command
+        cursor_.execute(sql, (book.title, book.author))
+        # use the connection to commit
+        con.commit()
+        # close the connection (unless you used with)
 
 
 with db.connect(host='localhost', user='root', password='1234') as con:
