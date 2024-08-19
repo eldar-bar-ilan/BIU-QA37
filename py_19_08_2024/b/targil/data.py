@@ -35,6 +35,17 @@ def find_book(isbn: int) -> Book:
         return book
 
 
+def update_book(book: Book):
+    book_from_db = find_book(book.isbn)
+    book_from_db.title = book.title
+    book_from_db.author = book.author
+    sql = 'update books set title=%s, author=%s where isbn=%s'
+    with db.connect(host='localhost', user='root', password='1234', database='db_library') as con:
+        cursor = con.cursor(prepared=True)
+        cursor.execute(sql, (book_from_db.title, book_from_db.author, book_from_db.isbn))
+        con.commit()
+
+
 with db.connect(host='localhost', user='root', password='1234') as con:
     cursor = con.cursor()
     # create a database named db_library
