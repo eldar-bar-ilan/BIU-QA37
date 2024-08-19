@@ -46,6 +46,22 @@ def update_book(book: Book):
         con.commit()
 
 
+def delete_book(isbn: int):
+    sql = f'delete from books where isbn = {isbn}'
+    with db.connect(host='localhost', user='root', password='1234', database='db_library') as con:
+        cursor = con.cursor()
+        cursor.execute(sql)
+        con.commit()
+
+
+def clear_all_books():
+    sql = 'truncate table books'
+    with db.connect(host='localhost', user='root', password='1234', database='db_library') as con:
+        cursor = con.cursor()
+        cursor.execute(sql)
+        con.commit()
+
+
 with db.connect(host='localhost', user='root', password='1234') as con:
     cursor = con.cursor()
     # create a database named db_library
