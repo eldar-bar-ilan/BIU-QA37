@@ -1,3 +1,8 @@
+# our custom made error
+class CarIllegalSpeedError(Exception):
+    pass
+
+
 class Car:
     MIN_SPEED = 0
     MAX_SPEED = 110
@@ -9,3 +14,6 @@ class Car:
         # before assigning the new speed check that it is legal
         if Car.MIN_SPEED <= speed <= Car.MAX_SPEED:
             self.speed = speed
+        else:
+            error = CarIllegalSpeedError(f'speed {speed} is illegal')
+            raise error
