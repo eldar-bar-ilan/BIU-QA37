@@ -7,6 +7,9 @@ class Book:
         self.title = title
         self.author = author
 
+    def __str__(self):
+        return f'Book[isbn={self.isbn}, title={self.title}, author={self.author}]'
+
 
 # add function that gets a book as parameter and adds it to the books table in the db
 def add_book(book: Book):
@@ -21,6 +24,15 @@ def add_book(book: Book):
         # use the connection to commit
         con.commit()
         # close the connection (unless you used with)
+
+
+def find_book(isbn: int) -> Book:
+    with db.connect(host='localhost', user='root', password='1234', database='db_library') as con:
+        cursor_ = con.cursor(prepared=True)
+        cursor_.execute(f'select title, author from books where isbn = %s', (isbn,))
+        result = cursor_.fetchone()
+        book = Book(isbn, result[0], result[1])
+        return book
 
 
 with db.connect(host='localhost', user='root', password='1234') as con:
