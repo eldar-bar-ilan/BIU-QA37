@@ -17,3 +17,6 @@ class Car:
         else:
             error = CarIllegalSpeedError(f'speed {speed} is illegal')
             raise error
+
+    def __str__(self):
+        return f'Car at speed {self.speed}'
