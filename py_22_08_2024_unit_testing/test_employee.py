@@ -3,33 +3,35 @@ from employee import Employee
 
 
 class TestEmployee(unittest.TestCase):
+    def setUp(self):
+        # the setup method will run before each test
+        print("======> setUp")
+        self.emp_1 = Employee('John', 'Smith', 30_000)
+        self.emp_2 = Employee('Mark', 'Levin', 50_000)
 
     def test_email(self):
-        emp_1 = Employee('John', 'Smith', 30_000)
-        emp_2 = Employee('Mark', 'Levin', 50_000)
-        self.assertEqual(emp_1.email, 'john.smith@email.com')
-        self.assertEqual(emp_2.email, 'mark.levin@email.com')
+        print("======> test_email")
+        self.assertEqual(self.emp_1.email, 'john.smith@email.com')
+        self.assertEqual(self.emp_2.email, 'mark.levin@email.com')
         # change the first name and check again
-        emp_1.first = 'Dan'
-        emp_2.first = 'Ran'
-        self.assertEqual(emp_1.email, 'dan.smith@email.com')
-        self.assertEqual(emp_2.email, 'ran.levin@email.com')
+        self.emp_1.first = 'Dan'
+        self.emp_2.first = 'Ran'
+        self.assertEqual(self.emp_1.email, 'dan.smith@email.com')
+        self.assertEqual(self.emp_2.email, 'ran.levin@email.com')
 
     def test_full_name(self):
-        emp_1 = Employee('John', 'Smith', 30_000)
-        emp_2 = Employee('Mark', 'Levin', 50_000)
-        self.assertEqual(emp_1.full, 'John Smith')
-        self.assertEqual(emp_2.full, 'Mark Levin')
+        print("======> test_full_name")
+        self.assertEqual(self.emp_1.full, 'John Smith')
+        self.assertEqual(self.emp_2.full, 'Mark Levin')
         # change the first name and check again
-        emp_1.first = 'Dan'
-        emp_2.first = 'Ran'
-        self.assertEqual(emp_1.full, 'Dan Smith')
-        self.assertEqual(emp_2.full, 'Ran Levin')
+        self.emp_1.first = 'Dan'
+        self.emp_2.first = 'Ran'
+        self.assertEqual(self.emp_1.full, 'Dan Smith')
+        self.assertEqual(self.emp_2.full, 'Ran Levin')
 
     def test_apply_raise(self):
-        emp_1 = Employee('John', 'Smith', 30_000)
-        emp_2 = Employee('Mark', 'Levin', 50_000)
-        emp_1.apply_raise()
-        emp_2.apply_raise()
-        self.assertEqual(emp_1.pay, 31_500)
-        self.assertEqual(emp_2.pay, 52_500)
+        print("======> test_apply_raise")
+        self.emp_1.apply_raise()
+        self.emp_2.apply_raise()
+        self.assertEqual(self.emp_1.pay, 31_500)
+        self.assertEqual(self.emp_2.pay, 52_500)
