@@ -22,3 +22,11 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.divide(10, 5), 2)
         self.assertEqual(calc.divide(1, -1), -1)
         self.assertEqual(calc.divide(-1, -1), 1)
+        self.assertEqual(calc.divide(5, 2), 2.5, 'test_divide failed on float result')
+        # option 1
+        self.assertRaises(ValueError, calc.divide, 5, 0)
+        # option 2
+        with self.assertRaises(ValueError, msg='test_divide failed - not raises when divide by 0') as cm:
+            calc.divide(5, 0)
+        # check that the error message for dividing by zero is correct
+        self.assertEqual(str(cm.exception), 'Cannot divide by zero!', 'wrong error msg for divide by 0')
