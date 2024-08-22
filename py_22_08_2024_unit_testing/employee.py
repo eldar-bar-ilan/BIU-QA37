@@ -15,7 +15,5 @@ class Employee:
     def email(self):
         return '{}.{}@email.com'.format(self.first, self.last).lower()
 
-
-emp = Employee('Eldar', 'Bakshi', 1000)
-print(emp.full)
-print(emp.email)
+    def apply_raise(self):
+        self.pay *= int(self.raise_amt)
