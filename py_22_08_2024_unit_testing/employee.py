@@ -16,4 +16,4 @@ class Employee:
         return '{}.{}@email.com'.format(self.first, self.last).lower()
 
     def apply_raise(self):
-        self.pay *= int(self.raise_amt)
+        self.pay = int(self.pay * self.raise_amt)
