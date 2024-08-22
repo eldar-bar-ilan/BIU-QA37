@@ -11,6 +11,11 @@ class Employee:
         # return f'{self.first} {self.last}'
         return '{} {}'.format(self.first, self.last)
 
+    @property
+    def email(self):
+        return '{}.{}@email.com'.format(self.first, self.last).lower()
+
 
 emp = Employee('Eldar', 'Bakshi', 1000)
 print(emp.full)
+print(emp.email)
