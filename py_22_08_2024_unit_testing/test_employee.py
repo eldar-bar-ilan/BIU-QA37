@@ -3,11 +3,22 @@ from employee import Employee
 
 
 class TestEmployee(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        print('===================> setUpClass')
+
+    @classmethod
+    def tearDownClass(cls):
+        print('===================> tearDownClass')
+
     def setUp(self):
         # the setup method will run before each test
         print("======> setUp")
         self.emp_1 = Employee('John', 'Smith', 30_000)
         self.emp_2 = Employee('Mark', 'Levin', 50_000)
+
+    def tearDown(self):
+        print("======> tearDown\n")
 
     def test_email(self):
         print("======> test_email")
