@@ -3,6 +3,14 @@ class Student:
         self.first = first
         self.last = last
 
+    def __eq__(self, other):
+        if not isinstance(other, Student):
+            return False
+        return self.first == other.first and self.last == other.last
+
+    def __repr__(self):
+        return 'Student[first={}, last={}]'.format(self.first, self.last)
+
 
 class Teacher:
     def __init__(self, first, last, profession):
