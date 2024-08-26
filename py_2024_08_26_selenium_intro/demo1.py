@@ -7,3 +7,4 @@ print(title)
 
 input('press enter to quit: ')
 driver.quit()
+# we could use with
