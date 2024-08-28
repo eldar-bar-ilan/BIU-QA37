@@ -1,3 +1,5 @@
+echo about to start commiting all changes. press CTRL + C to abort
+pause
 git pull origin
 git status
 git add --all
