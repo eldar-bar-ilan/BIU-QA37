@@ -16,5 +16,14 @@ def index():
         return render_template('index.html')
 
 
+# http://127.0.0.1:5000/add?a=100&b=130
+@app.route('/add', methods=['GET'])
+def add():
+    a = int(request.args['a'])
+    b = int(request.args['b'])
+    sum_ = a + b
+    return f'{a} + {b} = {sum_}'
+
+
 if __name__ == '__main__':
     app.run(debug=True)
