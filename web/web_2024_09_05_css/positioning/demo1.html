@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        div{
+        html,
+        body {
+            height: 200%;
+        }
+
+        div {
             width: 100px;
             height: 100px;
             border: 1px solid black;
         }
-        div.relative-position{
+
+        div.relative-position {
             position: relative;
             background-color: paleturquoise;
-            left: 30px;
-            bottom: 30px;
+        }
+
+        div.fixed-position{
+            position: fixed;
+            background-color: blanchedalmond;
         }
     </style>
 </head>
+
 <body>
     <div>static</div>
-    <div class="relative-position">relative</div>
+    <div class="relative-position" style="left: 30px;bottom: 30px;">relative</div>
     <div>static</div>
+    <div class="relative-position" style="left: 300px;bottom: 200px;">relative</div>
+    <div class="fixed-position" style="right: 0;top: 0;">fixed</div>
 </body>
+
 </html>
