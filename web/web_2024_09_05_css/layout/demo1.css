@@ -1,0 +1,41 @@
+html,body{
+    margin: 0;
+    height: 100%;
+}
+
+section{
+    box-sizing: border-box;
+    height: 100%;
+    border: 3px solid black;
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: 20% 80%;
+}
+
+header{
+    border: inherit;
+    grid-column: span 2;
+    grid-row: span 1;
+    text-align: center;
+}
+aside{
+    border: inherit;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+main{
+    border: inherit;
+    grid-column: span 1;
+    grid-row: span 1;
+}
+footer{
+    border: inherit;
+    grid-column: span 2;
+    grid-row: span 1;
+    text-align: center;
+} 
+
+aside a{
+    margin: 30px;
+    text-decoration: none;
+}
