@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        fieldset{
+        fieldset {
             width: fit-content;
         }
-        input, button{
+
+        input,
+        button {
             margin-bottom: 10px;
         }
     </style>
 </head>
+
 <body>
     <fieldset>
         <legend>Calculator</legend>
@@ -20,20 +24,42 @@
         <input id="b" type="number">
         <br>
         <button onclick="add()">+</button>
-        <button>-</button>
-        <button>x</button>
-        <button>:</button>
+        <button onclick="sub()">-</button>
+        <button onclick="mul()">x</button>
+        <button onclick="div()">:</button>
         <br>
         <label id="res">0</label>
     </fieldset>
 
     <script>
-        function add(){
+        function add() {
             let a = Number(document.getElementById('a').value);
             let b = Number(document.getElementById('b').value);
             result = a + b;
             document.getElementById('res').innerHTML = result;
         }
+
+        function sub() {
+            let a = Number(document.getElementById('a').value);
+            let b = Number(document.getElementById('b').value);
+            result = a - b;
+            document.getElementById('res').innerHTML = result;
+        }
+
+        function mul() {
+            let a = Number(document.getElementById('a').value);
+            let b = Number(document.getElementById('b').value);
+            result = a * b;
+            document.getElementById('res').innerHTML = result;
+        }
+
+        function div() {
+            let a = Number(document.getElementById('a').value);
+            let b = Number(document.getElementById('b').value);
+            result = a / b;
+            document.getElementById('res').innerHTML = result;
+        }
     </script>
 </body>
+
 </html>
