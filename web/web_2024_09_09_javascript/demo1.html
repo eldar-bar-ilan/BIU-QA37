@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="a" type="number">
+    <input id="b" type="number">
+    <button onclick="sum()">+</button>
+
+    <script>
+        function sum() {
+            let a_element = document.getElementById('a');
+            // print with dir will show us all element fields and values
+            console.dir(a_element);
+            let a = Number(a_element.value);
+            let b = Number(document.getElementById('b').value);
+            let sum = a + b;
+            console.log(a);
+            console.log(b);
+            console.log(sum);
+            
+        }
+    </script>
+</body>
+
+</html>
