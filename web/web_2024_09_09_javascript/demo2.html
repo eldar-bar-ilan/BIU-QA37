@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            width: fit-content;
+        }
+        input, button{
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Calculator</legend>
+        <input id="a" type="number">
+        <input id="b" type="number">
+        <br>
+        <button onclick="add()">+</button>
+        <button>-</button>
+        <button>x</button>
+        <button>:</button>
+        <br>
+        <label id="res">0</label>
+    </fieldset>
+
+    <script>
+        function add(){
+            let a = Number(document.getElementById('a').value);
+            let b = Number(document.getElementById('b').value);
+            result = a + b;
+            document.getElementById('res').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
