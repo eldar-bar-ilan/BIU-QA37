@@ -11,6 +11,8 @@
     <input id="a" type="number">
     <input id="b" type="number">
     <button onclick="sum()">+</button>
+    <br>
+    <label id="result">0</label>
 
     <script>
         function sum() {
@@ -23,7 +25,11 @@
             console.log(a);
             console.log(b);
             console.log(sum);
-            
+            // find the result label in the DOM
+            let lb_res = document.getElementById('result');
+            console.dir(lb_res);
+            // insert the sum value in the result label
+            lb_res.innerHTML = sum;
         }
     </script>
 </body>
