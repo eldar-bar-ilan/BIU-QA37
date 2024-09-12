@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to Selenium Waits</h1>
+    <p>In 3 seconds some content will apear below.</p>
+    <hr>
+    <div id="content"></div>
+
+    <script>
+        setTimeout(() => {
+            // code here will run after 3 seconds
+            let contentDiv = document.getElementById('content');
+            let input = document.createElement('input');
+            input.type='text';
+            input.id = 'first';
+            input.name = 'first-name';
+            input.placeholder = 'enter first name';
+            contentDiv.appendChild(input)
+        }, 3000);
+    </script>
+</body>
+</html>
