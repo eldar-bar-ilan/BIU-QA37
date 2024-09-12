@@ -7,10 +7,9 @@ import os
 driver = webdriver.Chrome()
 driver.get(f'file://{os.getcwd()}/../web/find_by_name.html')
 
-# //*[@id="login_form"]/input[2]
-
-pass_element = driver.find_element(By.XPATH, '//*[@id="login_form"]/input[2]')
-pass_element.send_keys('secret')
-
+# get all inputs with user info - belong to a class
+user_info_inputs = driver.find_elements(By.CLASS_NAME, 'user-info')
+user_info_inputs[0].send_keys('Moshe')
+user_info_inputs[1].send_keys('123')
 time.sleep(2)
 driver.quit()
