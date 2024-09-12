@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Welcome to Selenium Waits</h1>
-    <p>In 3 seconds some content will apear below.</p>
+    <p style="color: red;">In 3 seconds some content will apear below.</p>
     <hr>
     <div id="content"></div>
 
@@ -21,6 +21,10 @@
             input.name = 'first-name';
             input.placeholder = 'enter first name';
             contentDiv.appendChild(input)
+            let col = document.getElementsByTagName('p');
+            p = col.item(0);
+            p.innerHTML = 'Now an input is displayed bellow:'
+            p.style = 'color: green;'
         }, 3000);
     </script>
 </body>

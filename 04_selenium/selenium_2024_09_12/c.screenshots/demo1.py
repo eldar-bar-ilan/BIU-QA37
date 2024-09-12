@@ -11,9 +11,11 @@ driver.save_screenshot('../screenshots/01_open page.png')
 try:
     # locate the element with implicit wait
     input_element = driver.find_element(By.ID, 'first')
+    # second screenshot - input displayed
+    driver.save_screenshot('../screenshots/02_input_displayed.png')
     input_element.send_keys('Yaakov')
-    # second screenshot - input filled
-    driver.save_screenshot('../screenshots/02_input_filled.png')
+    # third screenshot - input filled
+    driver.save_screenshot('../screenshots/03_input_filled.png')
 except Exception as e:
     print('input element not found')
 finally:
