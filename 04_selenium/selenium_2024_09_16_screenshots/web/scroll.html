@@ -23,6 +23,7 @@
     <button onclick="scrollToElement(3)">3</button>
     <button onclick="scrollToElement(4)">4</button>
     <button onclick="scrollToElement(5)">5</button>
+    <button onclick="scrollToBottom()">Bottom</button>
 
     <div id="el-1", class="square">1</div>
     <div id="el-2", class="square">2</div>
@@ -34,6 +35,11 @@
         function scrollToElement(index) {
             let element = document.getElementById('el-' + index);
             element.scrollIntoView();
+        }
+
+        function scrollToBottom() {
+            // window.scrollTo(x, y);
+            window.scrollTo(0, document.body.scrollHeight);
         }
     </script>
 </body>
