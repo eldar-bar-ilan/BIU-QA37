@@ -30,3 +30,7 @@ class TestHomePage(unittest.TestCase):
         # use selenium to open the home page and get the title
         self.driver.get(f"{self.base_url}home.html")
         # use unittest to test the title
+        expected = "Automation Project"
+        actual = self.driver.title
+        self.assertEqual(expected, actual)
+
