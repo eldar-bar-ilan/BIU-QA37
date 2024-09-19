@@ -7,6 +7,8 @@ import time
 
 
 class TestHomePage(unittest.TestCase):
+    driver = None
+    base_url = f'file://{os.getcwd()}/web/'
 
     @classmethod
     def setUpClass(cls):
@@ -16,7 +18,6 @@ class TestHomePage(unittest.TestCase):
         options.add_argument('--start-maximized')
         cls.driver = webdriver.Chrome(options=options)
         # set the base url for all files if you want to write less code in the test methods
-        cls.base_url = f'file://{os.getcwd()}/web/'
 
     @classmethod
     def tearDownClass(cls):
@@ -33,4 +34,3 @@ class TestHomePage(unittest.TestCase):
         expected = "Automation Project"
         actual = self.driver.title
         self.assertEqual(expected, actual)
-
